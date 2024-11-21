@@ -1,0 +1,26 @@
+{
+  "name": "agenda_telefonica",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianrochacon10/ejercicio_3.10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrianrochacon10/ejercicio_3.10/issues"
+  },
+  "homepage": "https://github.com/adrianrochacon10/ejercicio_3.10#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7"
+  }
+}
