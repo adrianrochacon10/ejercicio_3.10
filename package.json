@@ -19,6 +19,7 @@
   "homepage": "https://github.com/adrianrochacon10/ejercicio_3.10#readme",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.7"

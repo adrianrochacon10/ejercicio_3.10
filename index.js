@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
+//Esto ayudara a comunicarse con un servicio externo
+const cors = require('cors')
+app.use(cors())
+
 const morgan = require("morgan");
 
 app.use(morgan("tiny"));
@@ -13,6 +17,17 @@ morgan.token("req-body", (req) => {
   return "";
 });
 
+const requestLogger = (request, response, next) => {
+  console.log('Method:', request.method)
+  console.log('Path:  ', request.path)
+  console.log('Body:  ', request.body)
+  console.log('---')
+  next()
+}
+
+app.use(requestLogger)
+
+//Manda mensajes de las peticiones que se realizan en nuestro back a través de la consola
 app.use(
   morgan(":method :url :res[content-length] - :response-time ms :req-body")
 );
@@ -109,6 +124,7 @@ app.delete("/api/persons/:id", (request, response) => {
   response.status(204).end();
 });
 
+//Este puerto es nuestro servidor backend
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
